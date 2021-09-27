@@ -1,0 +1,124 @@
+<!-- 로그인 페이지 출처 https://www.smarteyeapps.com/login-form-design -->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>VIUM - 간단한 분리수거 가이드</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.jpg')}}" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slider/css/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slider/css/owl.theme.default.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+    
+    </head>
+    <body class="form-login-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto login-desk">
+                    <div class="row">
+
+                        <!-- Left Side -->
+                        <div class="col-md-7 detail-box">
+                            <img class="logo" src="../static/images/logo.jpg" alt="">
+                            <div class="detailsh">
+                                <!-- 테스트 비디오 반복 재생 -->
+                                <iframe src="https://www.youtube.com/embed/CLsp1m8VzKM?autoplay=1&mute=1&amp;loop=1;&amp;playlist=CLsp1m8VzKM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                                <h3>Show your hamburger tray</h3>
+                                <p>we'll help you sort out trash and contribute to the environment.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Login Side -->
+                        <div class="col-md-5 loginform">
+                            <h4>Manager Login</h4>
+                            <p>Login to your Account</p>
+                            <div class="login-det">
+                                <div class="form-row">
+
+                                    <form method="post" class="post-form">
+                                    {{ form.csrf_token }}
+                                    {% include "form_errors.html" %}
+                                        <div class="login-form">
+
+                                            <!-- Login Branch Name -->
+                                            <div class="form-row">
+                                            <label for="">Branch</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">
+                                                            <i class="far fa-user"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="branch" id="branch"
+                                                            value="{{ form.branch.data or '' }}" placeholder="Enter Branchname">
+                                                </div>
+                                            </div>
+
+                                            <!-- Login User Name -->
+                                            <div class="form-row">
+                                                <label for="">Username</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">
+                                                            <i class="far fa-user"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="username" id="username"
+                                                    value="{{ form.username.data or '' }}" placeholder="Enter Username">
+                                                </div>
+                                            </div>
+
+                                            <!-- Login Password -->
+                                            <div class="form-row">
+                                                <label for="">Password</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">
+                                                            <i class="fas fa-lock"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input type="password" class="form-control" name="password" id="password"
+                                                    value="{{ form.password.data or '' }}" placeholder="Enter Password">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        
+                                        <!-- Forget Password -->
+                                        <p class="forget"><a href="">Forget Password?</a></p>
+                                        
+                                        <!-- Login Button -->
+                                        <button type="submit" class="btn btn-danger">Login</button>
+                                        {% if e != None %}
+                                            <p>{{e}}</p>
+                                        {% endif %}
+                                    </form>
+                                </div> <!-- form-row -->
+                            </div> <!-- login-det -->
+                        </div> <!-- col-md-5 loginform -->
+                    
+                    </div> <!-- row -->
+                </div> <!-- col-lg-10 mx-auto login-desk -->
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </body>
+
+    <footer>
+        <span class="m-0 text-white">Copyright &copy; VIUM / Click to go to the referenced page</span>
+        <a class="text-white" href = "https://www.mcdonalds.co.kr/kor/main.do" target = "blank" >| McDonald |</a>
+        <a class="text-white" href = "https://www.smarteyeapps.com/login-form-design" target = "blank" > HTML</a>
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js' )}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js' )}}"></script>
+    <script src="{{ url_for('static', filename='plugins/scroll-fixed/jquery-scrolltofixed-min.js' )}}"></script>
+    <script src="{{ url_for('static', filename='plugins/slider/js/owl.carousel.min.js' )}}"></script>
+    <script src="{{ url_for('static', filename='js/script.js' )}}"></script>
+</html>
